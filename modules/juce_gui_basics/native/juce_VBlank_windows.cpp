@@ -136,6 +136,9 @@ private:
             }
             else
             {
+                if ((state.load() & flagExit) != 0)
+                    return;
+
                 sleep (1);
             }
         }
